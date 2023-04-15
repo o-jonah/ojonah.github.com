@@ -1,0 +1,93 @@
+:root {
+    --clr-Jonah: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    background:  var(--clr-bg);
+    font-family: sans-serif;
+    color: var(--clr-Jonah);
+    padding-right: 10rem;
+}
+
+.Jonah-button{
+    font-size: 4rem;
+
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--clr-Jonah); 
+    border: var(--clr-Jonah);
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+
+    text-shadow:
+    0 0 0.125em hsl(0 0% 100% / 0.5), 
+    0 0 0.25em var(--clr-Jonah);
+    box-shadow: inset 0 0 0.5em 0 var(--clr-Jonah), 0 0 0.5em 0 var(--clr-Jonah);
+    padding-right: 10rem;
+}
+
+.Jonah-button{
+    font-size: 4rem;
+    color: var(--clr-Jonah);
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    border: var(--clr-Jonah) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: insert 0 0 0.5em 0 var(--clr-Jonah),
+    insert 0 0 0.5em 0 var(--clr-Jonah) ;
+
+    position: relative;
+   
+}
+
+.Jonah-button::before{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-Jonah);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+     filter: blur(1.5em);
+     opacity: 0.7;
+}
+.Jonah-button::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 3em 0.5em var(--clr-Jonah);
+    opacity: 0;
+    transition: opacity 10ms linear;
+    background: var(--clr-Jonah);
+    z-index: -1;
+}
+.Jonah-button:hover,
+.Jonah-button:focus {
+       background: var(--clr-Jonah);
+       color: var(--clr-bg);
+       text-shadow: none;
+}
+.Jonah-button:hover::after{
+    opacity: 1;
+}
